@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar color="dark">
     <ion-title>
-      New-K
+      News-K
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
             <ion-card-subtitle>{{ noticia.source.name }}</ion-card-subtitle>
             <ion-card-title>{{ noticia.title }}</ion-card-title>
           </ion-card-header>
-          <ion-img *ngIf="noticia.urlToimage" [src]="noticia.urlToimage"> </ion-img>
+          <ion-img *ngIf="noticia.urlToImage" [src]="noticia.urlToImage"> </ion-img>
 
 
 
@@ -26,4 +26,5 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-icon name="varios"></ion-icon>
 </ion-content>
