@@ -6,40 +6,9 @@
   </ion-toolbar>
 </ion-header>
 
-<<<<<<< HEAD
 <ion-content color="dark">
   
   <app-noticias [noticias] = "noticias"></app-noticias>
   
   <ion-icon name="varios"></ion-icon>
-=======
-<ion-content color="white">
-
-    <ion-card class="welcome-card">
-       <ion-card-header>
-          <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra
-            tenerte aquí </ion-card-title>
-        </ion-card-header>
-      </ion-card>
-
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col *ngFor="let noticia of noticias">
-       
-        <ion-card>
-
-          <ion-card-header>
-            <ion-card-subtitle>{{ noticia.source.name }}</ion-card-subtitle>
-            <ion-card-title>{{ noticia.title }}</ion-card-title>
-          </ion-card-header>
-          <ion-img *ngIf="noticia.urlToImage" [src]="noticia.urlToImage"> </ion-img>
-
-
-
-        </ion-card>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
->>>>>>> 98cf43a290d6418ee265ffccc837bc14ae5a63fe
 </ion-content>

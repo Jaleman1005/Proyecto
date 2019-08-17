@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +7,9 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  constructor( public afAuth: AngularFireAuth,private router: Router) { }
-
+  constructor() { }
 
   ngOnInit() {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        //this.router.navigateByUrl('/nav');
-        location.href="/nav";
-        
-      }
-    }); 
   }
+
 }

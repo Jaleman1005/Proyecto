@@ -11,33 +11,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
-
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import { environment } from 'src/environments/environment';
-
-const firebaseUiAuthConfig: firebaseui.auth.Config = {
-  signInFlow: 'popup',
-  signInOptions: [
-    firebase.auth.EmailAuthProvider.PROVIDER_ID,
- ],
-  tosUrl: '/terms',
-  privacyPolicyUrl: 'terms',
-  credentialHelper: firebaseui.auth.CredentialHelper.NONE
-};
-
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule,
     IonicModule.forRoot(),
     HttpClientModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)],
+    AppRoutingModule],
   providers: [
     StatusBar,
     SplashScreen,
