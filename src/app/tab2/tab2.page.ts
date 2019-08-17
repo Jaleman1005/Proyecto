@@ -13,7 +13,7 @@ import { NoticiasService } from '../services/noticias.service';
 
 export class Tab2Page implements OnInit {
 
-@ViewChild(IonSegment) segment: IonSegment;
+
 
   categorias = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology', ];
   noticias: Article[] = [];
@@ -25,35 +25,7 @@ export class Tab2Page implements OnInit {
 
 
   ngOnInit() {
-    this.segment.value = this.categorias[0];
-
-    this.cargarNoticias( this.categorias[0] );
-  }
-
-  cambioCategoria( event ) {
-
-    this.noticias = [];
-
-    this.cargarNoticias( event.detail.value );
 
   }
 
-  cargarNoticias( categoria: string, event? ) {
-
-    this.noticiasService.getTopHeadlinesCategoria( categoria )
-          .subscribe( resp => {
-            // console.log(resp);
-            this.noticias.push( ...resp.articles );
-
-            if ( event ) {
-              event.target.complete();
-            }
-          });
-  }
-
-  loadData( event ) {
-
-    this.cargarNoticias( this.segment.value, event );
-
-  }
 }
