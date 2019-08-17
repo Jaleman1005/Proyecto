@@ -7,6 +7,14 @@
 </ion-header>
 
 <ion-content color="white">
+
+    <ion-card class="welcome-card">
+       <ion-card-header>
+          <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra
+            tenerte aquí </ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
   <ion-grid fixed>
     <ion-row>
       <ion-col *ngFor="let noticia of noticias">
