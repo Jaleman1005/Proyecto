@@ -39,7 +39,7 @@ export class NoticiasService {
     this.headlinesPage++;
 
     // tslint:disable-next-line:max-line-length
-    // return this.http.get<RespuestaTopHeadlines>(`https://newsapi.org/v2/top-headlines?country=us&apiKey=dc62b49904694e81adf392d7e45a2365`);
+    // return this.http.get<RespuestaTopHeadlines>(`https://newsapi.org/v2/top-headlines?country=co&apiKey=dc62b49904694e81adf392d7e45a2365`);
 
     return this.ejecutarQuery<RespuestaTopHeadlines>(`/top-headlines?country=us&page=${ this.headlinesPage }`);
   }
