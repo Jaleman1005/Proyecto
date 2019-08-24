@@ -11,8 +11,11 @@ export const environment = {
     projectId: "proyectoconstruccion",
     storageBucket: "proyectoconstruccion.appspot.com",
     messagingSenderId: "475817886699"
+  },
+  interface:{
+    apiKey: '984e255723ed49a6a400ca94068aa962',
+    apiUrl: 'https://newsapi.org/v2'
   }
- 
 };
 
 /*
