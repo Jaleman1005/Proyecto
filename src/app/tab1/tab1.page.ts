@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NoticiasService } from 'src/app/services/noticias.service';
 import { Article } from 'src/app/interfaces/interfaces';
+import { UserServiceService } from '../services/user-service.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-tab1',
@@ -11,7 +13,7 @@ export class Tab1Page implements OnInit {
 
   noticias: Article[] = [];
 
-  constructor(private noticiasService: NoticiasService) { }
+  constructor(public userService: UserServiceService, public afAuth: AngularFireAuth, private noticiasService: NoticiasService) { }
 
 
   ngOnInit() {

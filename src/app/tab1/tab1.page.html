@@ -7,6 +7,14 @@
 </ion-header>
 
 <ion-content color="dark">
+
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/superior.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra
+        tenerte aquí </ion-card-title>
+    </ion-card-header>
+  </ion-card>
   
   <app-noticias [noticias] = "noticias"></app-noticias>
   
