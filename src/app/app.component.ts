@@ -7,6 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router,RouterEvent, NavigationEnd  } from '@angular/router';
 
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
+})
 
 export class AppComponent {
   constructor(
@@ -74,11 +79,5 @@ export class AppComponent {
     });
   
   }
-  
-  @Component({
-    selector: 'app-root',
-    templateUrl: 'app.component.html',
-    styleUrls: ['app.component.scss']
-  })
 
 }
