@@ -4,8 +4,8 @@ import { RespuestaTopHeadlines } from '../interfaces/interfaces';
 import { environment } from '../../environments/environment';
 
 
-const apiKey = environment.apiKey;
-const apiUlr = environment.apiUrl;
+const apiKey = environment.interface.apiKey;
+const apiUlr = environment.interface.apiUrl;
 
 const headers = new HttpHeaders({
   'X-Api-key': apiKey
