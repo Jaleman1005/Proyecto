@@ -7,13 +7,16 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router,RouterEvent, NavigationEnd  } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  templateUrl: 'app.component.html'
 })
-
 export class AppComponent {
+
+  public isConnected:boolean;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -24,6 +27,8 @@ export class AppComponent {
     public toastController: ToastController
   ) {
     this.initializeApp();
+
+
   }
 
   pages = [
@@ -31,34 +36,30 @@ export class AppComponent {
       title: 'Home',
       url: '/nav',
       icon: 'home'
-    },{
-      title: 'Planes',
-      url: '/nav/tabs/tab2',
-      icon: 'md-calendar'
-    },{
-      title: 'Mis invitaciones',
-      url: '/invitaciones-familiares',
-      icon: 'mail'
     },
     {
       title: 'Cerrar sesión',
       url: '/cerrar-sesion',
       icon: 'open'
     }
+
+ 
   ];
-  
+
+
+
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
-  
+
   ngOnInit() {
-  
-  
-  
-  
+
+
+
+
     this.afAuth.authState.subscribe(user => {
       if (!user) {
         if(this.router.url != '/'        )
@@ -77,7 +78,7 @@ export class AppComponent {
         });
       }
     });
-  
+
   }
 
 }

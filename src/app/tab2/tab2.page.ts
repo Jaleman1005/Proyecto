@@ -1,7 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { IonSegment } from '@ionic/angular';
-import { Article } from '../../../Proyecto/src/app/interfaces/interfaces';
+
 import { NoticiasService } from '../services/noticias.service';
+import { Article } from '../interfaces/interfaces';
 
 
 

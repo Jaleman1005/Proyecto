@@ -13,8 +13,8 @@ export const environment = {
     messagingSenderId: "475817886699"
   },
   interface:{
-    apiKey: '984e255723ed49a6a400ca94068aa962',
-    apiUrl: 'https://newsapi.org/v2'
+    apiKeyN: '984e255723ed49a6a400ca94068aa962',
+    apiUrlN: 'https://newsapi.org/v2'
   }
 };
 

@@ -4,11 +4,11 @@ import { RespuestaTopHeadlines } from '../interfaces/interfaces';
 import { environment } from '../../environments/environment';
 
 
-const apiKey = environment.interface.apiKey;
-const apiUlr = environment.interface.apiUrl;
+const apiKeyN = environment.interface.apiKeyN;
+const apiUlrN = environment.interface.apiUrlN;
 
 const headers = new HttpHeaders({
-  'X-Api-key': apiKey
+  'X-Api-key': apiKeyN
 });
 
 
@@ -27,7 +27,7 @@ export class NoticiasService {
 
   private ejecutarQuery<T>( query: string ) {
 
-    query = apiUlr + query;
+    query = apiUlrN + query;
 
     return this.http.get<T>( query, { headers } );
 
