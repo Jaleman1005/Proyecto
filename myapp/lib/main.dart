@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/pages/menu.dart';
 
 void main() => runApp(new MyApp());
 
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordFilter = new TextEditingController();
   String _email = "";
   String _password = "";
-  FormType _form = FormType.login; // our default setting is to login, and we should switch to creating an account when the user chooses to
+  FormType _form = FormType.login;   // our default setting is to login, and we should switch to creating an account when the user chooses to
 
   _LoginPageState() {
     _emailFilter.addListener(_emailListen);
@@ -125,6 +126,15 @@ class _LoginPageState extends State<LoginPage> {
               child: new Text('Login'),
               onPressed: _loginPressed,
             ),
+            new RaisedButton(
+              child: new Text('Ingresar como invitado'),
+              onPressed: () {
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => MenuPage()),
+                  );
+              },
+            ),
             new FlatButton(
               child: new Text('Dont have an account? Tap here to register.'),
               onPressed: _formChange,
@@ -168,6 +178,5 @@ class _LoginPageState extends State<LoginPage> {
   void _passwordReset () {
     print("The user wants a password reset request sent to $_email");
   }
-
 
 }
