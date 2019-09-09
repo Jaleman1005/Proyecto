@@ -12,8 +12,26 @@ class CategoriasPageState extends State<CategoriasPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('ingresa a esta'),
-    );
+    return Scaffold(
+      body: ListView(
+        children: _crearCategorias()
+              ),
+            );
+          }
+        
+  final opciones = ['Musica','Cine','Deportes','Fama','Clima'];
+
+  List<Widget>  _crearCategorias() {
+     
+     return opciones.map(( item){
+       return Column(
+         children: <Widget>[
+           ListTile(
+             title: Text(item),
+           ),
+           Divider(),
+         ],
+       );
+     }).toList();
   }
 }

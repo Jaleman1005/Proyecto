@@ -15,7 +15,6 @@ class MenuPage extends StatefulWidget {
 
 class MenuPageState extends State<MenuPage>{
 
-  int _counter = 0;
   int _current_index= 0;
 
   List<Widget> _children =[
@@ -23,12 +22,6 @@ class MenuPageState extends State<MenuPage>{
     NoticiasPage(),
     StatusPage(),
   ];
-  
-   void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   void _onTabBar(int index){
     setState(() {
@@ -64,5 +57,4 @@ class MenuPageState extends State<MenuPage>{
         body: _children[_current_index],
     );
   }
-
 }
