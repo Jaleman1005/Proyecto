@@ -11,9 +11,8 @@ class StatusPage extends StatefulWidget{
 class StatusPageState extends State<StatusPage>{
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: Scaffold(
-          body: new ListView(
+    return Scaffold(
+            body: new ListView(
               children: [  
                 const ListTile(
                 leading: Icon(Icons.mail),
@@ -60,8 +59,7 @@ class StatusPageState extends State<StatusPage>{
                 ) 
               ]
         )
-      )
-    );  
+    );
 }
 Widget _buildItem(String textTitle) {
   return new ListTile(

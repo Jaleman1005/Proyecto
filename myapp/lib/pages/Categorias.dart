@@ -13,7 +13,7 @@ class CategoriasPageState extends State<CategoriasPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('data'),
+      child: Text('ingresa a esta'),
     );
   }
 }
