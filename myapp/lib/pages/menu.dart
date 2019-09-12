@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:startup_namer/pages/Categorias.dart';
-import 'package:startup_namer/pages/status.dart';
-import 'package:startup_namer/pages/noticias.dart';
+import 'Categorias.dart';
+import 'status.dart';
+import 'chats.dart';
+
  
  
 class MenuPage extends StatefulWidget {
@@ -19,7 +20,7 @@ class MenuPageState extends State<MenuPage>{
 
   List<Widget> _children =[
     CategoriasPage(),
-    NoticiasPage(),
+    ChatsPageState(),
     StatusPage(),
   ];
 

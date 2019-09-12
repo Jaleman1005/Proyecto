@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'calls.dart';
+
+
 
 class StatusPage extends StatefulWidget{
   
@@ -40,10 +43,6 @@ class StatusPageState extends State<StatusPage>{
                 title: Text('Nacionales')
                 ),
                  const ListTile(
-                leading: Icon(Icons.motorcycle),
-                title: Text('Entretenimiento')
-                ),
-                 const ListTile(
                 leading: Icon(Icons.attach_money),
                 title: Text('Economia')
                 ),
@@ -51,8 +50,17 @@ class StatusPageState extends State<StatusPage>{
                 child: ButtonBar(
                   children: <Widget>[
                     FlatButton(
-                      child: const Text('CREAR FORO'),
-                      onPressed: () { /* ... */ },
+                      padding: EdgeInsets.all(16.160),
+                      splashColor: Colors.blueAccent,
+                      child: const Icon(Icons.mode_edit),
+                      onPressed: () {                                                
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DatosForoPage(),
+                          ),
+                        );
+                        },
                       )
                     ]              
                   )
@@ -60,11 +68,5 @@ class StatusPageState extends State<StatusPage>{
               ]
         )
     );
-}
-Widget _buildItem(String textTitle) {
-  return new ListTile(
-      title: new Text(textTitle),
-      leading: new Icon(Icons.comment),
-  );
 }
 }

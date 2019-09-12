@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:startup_namer/pages/menu.dart';
 
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,8 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Login',
-      theme: new ThemeData.dark(
-        //primarySwatch: Colors.grey
+      theme: new ThemeData.dark(              
       ),
       home: new LoginPage(),
     );
