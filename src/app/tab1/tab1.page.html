@@ -7,16 +7,23 @@
 </ion-header>
 
 <ion-content color="dark">
-
+ 
   <ion-card class="welcome-card">
     <ion-img src="/assets/superior.jpg"></ion-img>
     <ion-card-header>
-      <ion-card-title *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra
+      <ion-card-title class="saludo" *ngIf="afAuth.auth.currentUser">Hola, {{afAuth.auth.currentUser.displayName}}<br> Nos alegra
         tenerte aquí </ion-card-title>
     </ion-card-header>
   </ion-card>
   
   <app-noticias [noticias] = "noticias"></app-noticias>
+  
+  <ion-infinite-scroll threshold="150px" 
+                       (ionInfinite)="loadData( $event )">
+    <ion-infinite-scroll-content loadingSpinner="crescent"
+                                 loadingText="Cargando data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
   
   <ion-icon name="varios"></ion-icon>
 </ion-content>

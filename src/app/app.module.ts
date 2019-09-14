@@ -36,7 +36,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 @NgModule({
   declarations: [AppComponent, MenuItemComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
+    HttpClientModule, IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, AngularFirestoreModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig), FormsModule],

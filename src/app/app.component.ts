@@ -27,10 +27,15 @@ export class AppComponent {
     public toastController: ToastController
   ) {
     this.initializeApp();
-
-
   }
 
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+    });
+  }
+  
   pages = [
     {
       title: 'Home',
@@ -46,19 +51,7 @@ export class AppComponent {
  
   ];
 
-
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
-
   ngOnInit() {
-
-
-
 
     this.afAuth.authState.subscribe(user => {
       if (!user) {
