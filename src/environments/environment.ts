@@ -4,18 +4,18 @@
 
 export const environment = {
   production: true,
-  firebase:{
-    apiKey: "AIzaSyCXWyZegNWDDlHjX_FlYNL4Abxvfl1h-pE",
-    authDomain: "proyectoconstruccion.firebaseapp.com",
-    databaseURL: "https://proyectoconstruccion.firebaseio.com",
-    projectId: "proyectoconstruccion",
-    storageBucket: "proyectoconstruccion.appspot.com",
-    messagingSenderId: "475817886699"
-  },
-  interface:{
-    apiKeyN: '984e255723ed49a6a400ca94068aa962',
-    apiUrlN: 'https://newsapi.org/v2'
-  }
+  
+    apiKey: '984e255723ed49a6a400ca94068aa962',
+    apiUrl: 'https://newsapi.org/v2',
+
+    firebase:{
+      apiKey: "AIzaSyCXWyZegNWDDlHjX_FlYNL4Abxvfl1h-pE",
+      authDomain: "proyectoconstruccion.firebaseapp.com",
+      databaseURL: "https://proyectoconstruccion.firebaseio.com",
+      projectId: "proyectoconstruccion",
+      storageBucket: "proyectoconstruccion.appspot.com",
+      messagingSenderId: "475817886699"
+    },
 };
 
 /*
