@@ -7,7 +7,6 @@ class DatosForoPage extends StatefulWidget{
   }
 
 }
-
 class DatosPageState extends State<DatosForoPage>{
 
  Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/pages/noticias.dart';
 
 import 'Categorias.dart';
 import 'status.dart';
@@ -22,6 +23,7 @@ class MenuPageState extends State<MenuPage>{
     CategoriasPage(),
     ChatsPageState(),
     StatusPage(),
+    NoticiasPage()
   ];
 
   void _onTabBar(int index){
@@ -52,6 +54,10 @@ class MenuPageState extends State<MenuPage>{
             BottomNavigationBarItem(
               icon: Icon(Icons.textsms),
               title: Text('Foro')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.textsms),
+              title: Text('Perfil')
             )
           ],
         ),

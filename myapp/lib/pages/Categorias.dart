@@ -13,25 +13,23 @@ class CategoriasPageState extends State<CategoriasPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: _crearCategorias()
+      body: 
+        CustomScrollView(
+            slivers: <Widget>[
+              SliverFixedExtentList(
+                itemExtent: 50.0,
+                delegate: SliverChildBuilderDelegate(
+                  (BuildContext context, int index) {
+                    return Container(
+                      alignment: Alignment.center,
+                      color: Colors.green[600],
+                      child: Text('Categorias $index'),
+                    );
+                  },
+                ),
               ),
-            );
-          }
-        
-  final opciones = ['Musica','Cine','Deportes','Fama','Clima'];
-
-  List<Widget>  _crearCategorias() {
-     
-     return opciones.map(( item){
-       return Column(
-         children: <Widget>[
-           ListTile(
-             title: Text(item),
-           ),
-           Divider(),
-         ],
-       );
-     }).toList();
+            ],
+          )
+    );
   }
 }
