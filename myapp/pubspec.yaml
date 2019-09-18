@@ -18,3 +18,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets: 
+    - imagenes/musica.jpg
+    - imagenes/deportes.jpg
+    - imagenes/cine.jpg
+    - imagenes/ciencia.jpg
+    - imagenes/mundo.jpg
+    - imagenes/cultura.jpg
+    - imagenes/clima.jpg
+    - imagenes/salud.jpg
+    - imagenes/economia.jpg
+    - imagenes/politica.jpg
+    
