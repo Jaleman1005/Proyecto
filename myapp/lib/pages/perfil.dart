@@ -28,6 +28,8 @@ class _PerfilPageState extends State<PerfilPage> {
          ],
     );
   }
+
+  
 }
 
 class Profile extends StatelessWidget {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:startup_namer/pages/FiltosCategorias/deportes.dart';
+import 'package:startup_namer/pages/FiltosCategorias/musica.dart';
 
 class CategoriasPage extends StatefulWidget{
   @override
@@ -23,110 +25,96 @@ class CategoriasPageState extends State<CategoriasPage> {
         mainAxisSpacing: 10,
         crossAxisCount: 2,
         children: <Widget>[
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Musica'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/musica.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Musica',
+            assetimage: 'imagenes/musica.jpg',
+            url: musicaPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Deportes'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/deportes.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Deportes',
+            assetimage: 'imagenes/deportes.jpg',
+            url: deportesPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Cine'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/cine.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Cine',
+            assetimage: 'imagenes/cine.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Ciencia y tecnología'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/ciencia.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Ciencia y tecnología',
+            assetimage: 'imagenes/ciencia.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Mundo'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/mundo.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Mundo',
+            assetimage: 'imagenes/mundo.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Arte, Cultura y entretenimiento'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/cultura.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Arte, Cultura y entretenimiento',
+            assetimage: 'imagenes/cultura.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Clima'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/clima.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Clima',
+            assetimage: 'imagenes/clima.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Salud'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/salud.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Salud',
+            assetimage: 'imagenes/salud.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Economía'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/economia.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Economía',
+            assetimage: 'imagenes/economia.jpg',
+            url: CategoriasPage(),
           ),
-          Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Política'),
-            decoration: new BoxDecoration(
-              image: DecorationImage(
-                image: new AssetImage('imagenes/politica.jpg'),
-                fit: BoxFit.fill,
-              ),
-            ),
+          contenedores(
+            text: 'Política',
+            assetimage: 'imagenes/politica.jpg',
+            url: CategoriasPage(),
           ),
         ],
       ),
     ),
   ],
 );
+  }
+}
+
+class contenedores extends StatelessWidget {
+  final String assetimage;
+  final String text;
+  final Widget url;
+  const contenedores({
+    Key key,
+    @required this.assetimage,
+    @required this.text,
+    @required this.url,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: InkWell(
+      onTap: (){
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => this.url),
+                  );
+              }, // handle your onTap here
+      child: Container(
+            padding: const EdgeInsets.all(8),
+            child: Text(this.text),
+            decoration: new BoxDecoration(
+              image: DecorationImage(
+              image: new AssetImage(this.assetimage),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
