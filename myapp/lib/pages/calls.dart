@@ -8,46 +8,37 @@ class DatosForoPage extends StatefulWidget{
 
 }
 class DatosPageState extends State<DatosForoPage>{
-
- Widget build(BuildContext context) {
-  return Scaffold(
-     appBar: AppBar(
-        title: Text('Foro')
+  String results = "";
+  final TextEditingController controller = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Comentarios"),
+        backgroundColor: Colors.red,
       ),
-    body: new ListView(
-      children: [  
-        TextField(
-          decoration: InputDecoration( 
-            border: OutlineInputBorder(),
-            labelText: 'Tema'
-          ),
-        ),
-        TextField(
-          decoration: InputDecoration( 
-            contentPadding: const EdgeInsets.symmetric(vertical: 80.0),
-            border: OutlineInputBorder(),
-            hintText: 'Please enter a text',
-            labelText: 'Ingrese su comentario'
-          ),
-        ),
-        FloatingActionButton(
-            onPressed: () {
-              return showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Text("Su comentario ha sido ingresado"),
-                  );
+      body: Container(
+        padding: const EdgeInsets.all(10.0),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              TextField(
+                decoration: InputDecoration(hintText: "Enter text here..."),
+                onSubmitted: (String str) {
+                  setState(() {
+                    results = results + "\n" + str;
+                    controller.text = "";
+                  });
                 },
-              );
-            },
-            tooltip: 'Show me the value!',
-            child: Icon(Icons.message),
-          )
-      ]   
-    )
-  );
-  
-}
+                controller: controller,
+              ),
+              Text(results)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
