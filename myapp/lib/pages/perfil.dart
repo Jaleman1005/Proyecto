@@ -59,7 +59,7 @@ class Connections extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(40, 0 ,255, 0),
+      color: Colors.blue,
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
