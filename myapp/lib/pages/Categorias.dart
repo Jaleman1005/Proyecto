@@ -25,52 +25,52 @@ class CategoriasPageState extends State<CategoriasPage> {
         mainAxisSpacing: 10,
         crossAxisCount: 2,
         children: <Widget>[
-          contenedores(
+          Cartas(
             text: 'Musica',
             assetimage: 'imagenes/musica.jpg',
-            url: musicaPage(),
+            url: MusicaPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Deportes',
             assetimage: 'imagenes/deportes.jpg',
-            url: deportesPage(),
+            url: DeportesPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Cine',
             assetimage: 'imagenes/cine.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Ciencia y tecnología',
             assetimage: 'imagenes/ciencia.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Mundo',
             assetimage: 'imagenes/mundo.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Arte, Cultura y entretenimiento',
             assetimage: 'imagenes/cultura.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Clima',
             assetimage: 'imagenes/clima.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Salud',
             assetimage: 'imagenes/salud.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Economía',
             assetimage: 'imagenes/economia.jpg',
             url: CategoriasPage(),
           ),
-          contenedores(
+          Cartas(
             text: 'Política',
             assetimage: 'imagenes/politica.jpg',
             url: CategoriasPage(),
@@ -83,11 +83,11 @@ class CategoriasPageState extends State<CategoriasPage> {
   }
 }
 
-class contenedores extends StatelessWidget {
+class Cartas extends StatelessWidget {
   final String assetimage;
   final String text;
   final Widget url;
-  const contenedores({
+  const Cartas({
     Key key,
     @required this.assetimage,
     @required this.text,

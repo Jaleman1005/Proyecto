@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class musicaPage extends StatefulWidget {
+class MusicaPage extends StatefulWidget {
   @override
-  _musicaPageState createState() => _musicaPageState();
+  _MusicaPageState createState() => _MusicaPageState();
 }
 
-class _musicaPageState extends State<musicaPage>{
+class _MusicaPageState extends State<MusicaPage>{
   @override
   Widget build(BuildContext context) {
      return Scaffold(
