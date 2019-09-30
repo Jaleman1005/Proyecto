@@ -1,20 +1,70 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-class MusicaPage extends StatefulWidget {
-  @override
-  _MusicaPageState createState() => _MusicaPageState();
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+void main() {
+  runApp(musicaPage());
 }
 
-class _MusicaPageState extends State<MusicaPage>{
+class musicaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
-      appBar: AppBar(
-        title: Text("Musica"),
-      ),
-      body: Center(
-        child: Text('aqui aparecen las noticias de musica'),
+    return MaterialApp(
+      home: Scaffold(body: NetworkBody()),
+    );
+  }
+}
+
+class NetworkBody extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Quotation(url: 'https://quotes.rest/qod.json'),
+          Padding(padding: EdgeInsets.only(top: 50.0)),
+          Image
+              .network('https://flutter.io/images/flutter-mark-square-100.png'),
+        ],
       ),
     );
+  }
+}
+
+/// The first line of a HTTP request body
+class Quotation extends StatefulWidget {
+  Quotation({Key key, this.url}) : super(key: key);
+
+  final String url;
+
+  @override
+  createState() => _QuotationState();
+}
+
+class _QuotationState extends State<Quotation> {
+  String data = 'Loading ...';
+
+  @override
+  void initState() {
+    super.initState();
+    _get();
+  }
+
+  _get() async {
+    final res = await http.get(widget.url);
+    setState(() => data = _parseQuoteFromJson(res.body));
+  }
+
+  String _parseQuoteFromJson(String jsonStr) {
+    // In the real world, this should check for errors
+    final jsonQuote = json.decode(jsonStr);
+    return jsonQuote['contents']['quotes'][0]['quote'];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(data, textAlign: TextAlign.center);
   }
 }
