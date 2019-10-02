@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:startup_namer/services/webservice.dart';
 import 'package:startup_namer/utils/constants.dart';
 
+
 class NewsArticle {
   
   final String title; 
