@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'calls.dart';
+import 'datosforo.dart';
 
 
 
@@ -95,6 +95,9 @@ class ForoPageState extends State<ForoPage>{
     );
 
     return Scaffold(
+      appBar: new AppBar(
+        title: new Text("Foros Konrad"),
+      ),
       body: Container(
         // Sets the padding in the main container
         padding: const EdgeInsets.only(bottom: 2.0),
@@ -103,7 +106,6 @@ class ForoPageState extends State<ForoPage>{
         ),
       ),
     );
-    ;
   }
 }
 
