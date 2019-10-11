@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:startup_namer/pages/perfil.dart';
+import 'package:startup_namer/pages/perfil/perfil.dart';
 
 import 'App.dart';
-import 'Categorias.dart';
 import 'Foro.dart';
 
  
@@ -20,7 +19,7 @@ class MenuPageState extends State<MenuPage>{
   int _current_index= 0;
 
   List<Widget> _children =[
-    CategoriasPage(),
+
     App(),
     ForoPage(),
     PerfilPage()
