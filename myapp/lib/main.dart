@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget{
             ),
             new ListTile(
               title: new Text("Categorias"),
-              trailing: new Icon(Icons.new_releases),
+              trailing: new Icon(Icons.category),
               onTap: (){
                   Navigator.of(context).push(new MaterialPageRoute(
                     builder:(BuildContext context)=>

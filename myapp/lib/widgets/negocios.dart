@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:startup_namer/models/newsArticle.dart';
+import 'package:startup_namer/models/negociosArticle.dart';
 import 'package:startup_namer/services/webservice.dart';
 import 'package:startup_namer/utils/constants.dart';
 
 class NegociosListState extends State<NegociosList> {
 
-  List<NewsArticle> _newsArticles = List<NewsArticle>(); 
+  List<NegociosArticle> _negociosArticles = List<NegociosArticle>(); 
 
   @override
   void initState() {
@@ -18,9 +18,9 @@ class NegociosListState extends State<NegociosList> {
 
   void _populateNewsArticles() {
    
-    Webservice().load(NewsArticle.all).then((newsArticles) => {
+    Webservice().load(NegociosArticle.all).then((negociosArticles) => {
       setState(() => {
-        _newsArticles = newsArticles
+        _negociosArticles = negociosArticles
       })
     });
 
@@ -28,8 +28,8 @@ class NegociosListState extends State<NegociosList> {
 
   ListTile _buildItemsForListView(BuildContext context, int index) {
       return ListTile(
-        title: _newsArticles[index].urlToImage == null ? Image.asset(Constants.NEWS_PLACEHOLDER_IMAGE_ASSET_URL) : Image.network(_newsArticles[index].urlToImage), 
-        subtitle: Text(_newsArticles[index].title, style: TextStyle(fontSize: 18)),
+        title: _negociosArticles[index].urlToImage == null ? Image.asset(Constants.NEWS_PLACEHOLDER_IMAGE_ASSET_URL) : Image.network(_negociosArticles[index].urlToImage), 
+        subtitle: Text(_negociosArticles[index].title, style: TextStyle(fontSize: 20)),
       );
   }
 
@@ -37,7 +37,7 @@ class NegociosListState extends State<NegociosList> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView.builder(
-          itemCount: _newsArticles.length,
+          itemCount: _negociosArticles.length,
           itemBuilder: _buildItemsForListView,
         )
       );
