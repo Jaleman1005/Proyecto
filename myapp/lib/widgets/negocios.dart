@@ -6,7 +6,7 @@ import 'package:startup_namer/models/newsArticle.dart';
 import 'package:startup_namer/services/webservice.dart';
 import 'package:startup_namer/utils/constants.dart';
 
-class NewsListState extends State<NewsList> {
+class NegociosListState extends State<NegociosList> {
 
   List<NewsArticle> _newsArticles = List<NewsArticle>(); 
 
@@ -44,8 +44,8 @@ class NewsListState extends State<NewsList> {
   }
 }
 
-class NewsList extends StatefulWidget {
+class NegociosList extends StatefulWidget {
 
   @override
-  createState() => NewsListState(); 
+  createState() => NegociosListState(); 
 }

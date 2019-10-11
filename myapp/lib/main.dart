@@ -1,4 +1,4 @@
-import 'package:startup_namer/pages/App.dart';
+import 'package:startup_namer/pages/Categorias/categorias.dart';
 import 'package:startup_namer/pages/foro/foro.dart';
 import 'package:startup_namer/pages/game/game.dart';
 import 'package:startup_namer/pages/perfil/perfil.dart';
@@ -51,6 +51,15 @@ class HomePage extends StatelessWidget{
                   Navigator.of(context).push(new MaterialPageRoute(
                     builder:(BuildContext context)=>
                             new MyApp()));
+              },
+            ),
+            new ListTile(
+              title: new Text("Categorias"),
+              trailing: new Icon(Icons.new_releases),
+              onTap: (){
+                  Navigator.of(context).push(new MaterialPageRoute(
+                    builder:(BuildContext context)=>
+                            new Categorias()));
               },
             ),
             new ListTile(
