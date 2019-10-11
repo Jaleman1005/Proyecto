@@ -82,6 +82,6 @@ class CategoriasState extends State<Categorias> with SingleTickerProviderStateMi
             // Set the bottom property of the Appbar to include a Tab Bar
             bottom: getTabBar()),
         // Set the TabBar view as the body of the Scaffold
-        body: getTabBarView(<Widget>[First(), Second(), First()]));
+        body: getTabBarView(<Widget>[First(), First(), First()]));
   }
 }
