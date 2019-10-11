@@ -1,7 +1,7 @@
 import 'package:startup_namer/pages/App.dart';
-import 'package:startup_namer/pages/foro.dart';
-import 'package:startup_namer/pages/game.dart';
-import 'package:startup_namer/pages/perfil.dart';
+import 'package:startup_namer/pages/foro/foro.dart';
+import 'package:startup_namer/pages/game/game.dart';
+import 'package:startup_namer/pages/perfil/perfil.dart';
 import 'package:startup_namer/widgets/newsList.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
