@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:startup_namer/pages/Categorias/subCategorias/First.dart';
+import 'package:startup_namer/pages/Categorias/subCategorias/Second.dart';
 
 
 void main() {
@@ -50,7 +51,7 @@ class CategoriasState extends State<Categorias> with SingleTickerProviderStateMi
         ),
         Tab(
           icon: Icon(Icons.airplanemode_active),
-        ),
+        )
       ],
       // setup the controller
       controller: controller,
@@ -81,6 +82,6 @@ class CategoriasState extends State<Categorias> with SingleTickerProviderStateMi
             // Set the bottom property of the Appbar to include a Tab Bar
             bottom: getTabBar()),
         // Set the TabBar view as the body of the Scaffold
-        body: getTabBarView(<Widget>[First(), First(), First()]));
+        body: getTabBarView(<Widget>[First(), Second(), First()]));
   }
 }

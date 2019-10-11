@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:startup_namer/widgets/deportesList.dart';
 
 
-class First extends StatelessWidget {
+class Second extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
