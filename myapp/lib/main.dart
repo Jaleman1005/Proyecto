@@ -1,7 +1,8 @@
 import 'package:startup_namer/pages/Categorias/categorias.dart';
+import 'package:startup_namer/pages/Perfil/perfil.dart';
 import 'package:startup_namer/pages/foro/foro.dart';
 import 'package:startup_namer/pages/game/game.dart';
-import 'package:startup_namer/pages/perfil/perfil.dart';
+//import 'package:startup_namer/pages/perfil/perfil.dart';
 import 'package:startup_namer/widgets/newsList.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +81,7 @@ class HomePage extends StatelessWidget{
               trailing: new Icon(Icons.supervised_user_circle),
               onTap: (){
                   Navigator.of(context).push(new MaterialPageRoute(
-                    builder:(BuildContext context)=>
+                    builder:(BuildContext context)=> 
                             new PerfilPage()));
               },
             ),

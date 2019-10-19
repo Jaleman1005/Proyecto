@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:startup_namer/pages/Categorias/subCategorias/First.dart';
-import 'package:startup_namer/pages/Categorias/subCategorias/Second.dart';
+//import 'package:startup_namer/pages/Categorias/subCategorias/Second.dart';
 
 
 void main() {

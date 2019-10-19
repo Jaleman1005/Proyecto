@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(musicaPage());
+  runApp(MusicaPage());
 }
 
-class musicaPage extends StatelessWidget {
+class MusicaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
