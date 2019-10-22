@@ -30,7 +30,7 @@ class DatosPageState extends State<DatosForoPage>{
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               TextField(
-                decoration: InputDecoration( border: OutlineInputBorder(),labelText: 'Ingresa el comentario',),
+                decoration: InputDecoration( border: OutlineInputBorder(),labelText: 'Tema a discutir',),
                 onSubmitted: (String str) {
                   setState(() { 
                     results = results + "\n" + str;
@@ -38,6 +38,23 @@ class DatosPageState extends State<DatosForoPage>{
                   });
                 },
                 controller: controller,
+              ),TextField(
+                decoration: InputDecoration( border: OutlineInputBorder(),labelText: 'Ingresa tu nombre o alias',),
+                onSubmitted: (String str) {
+                  setState(() { 
+                    results = results + "\n" + str;
+                    controller.text = "";
+                  });
+                },
+                controller: controller,
+              ),TextField(
+                decoration: InputDecoration( border: OutlineInputBorder(),labelText: 'Ingresa tu comentario',),
+                onSubmitted: (String str) {
+                  setState(() { 
+                    results = results + "\n" + str;
+                    controller.text = "";
+                  });
+                },
               ),
               new Text(results)
             ],
