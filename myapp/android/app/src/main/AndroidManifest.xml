@@ -9,7 +9,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="newsK"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/icono">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
