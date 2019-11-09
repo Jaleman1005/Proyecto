@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/services/repository.dart';
 //pages import
-import 'login_page.dart';
-import 'auth.dart';
-
+import './pages/noticias/home.dart';
 void main(){
   NewsRepository _repository=NewsRepository();
    runApp(Categorias(repository:_repository));
@@ -20,8 +18,7 @@ class Categorias extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.indigo
       ),
-      //home: HomePage(repository:repository),
-      home: new LoginPage(auth: new Auth())
+      home: HomePage(repository:repository),
     );
   }
 }
