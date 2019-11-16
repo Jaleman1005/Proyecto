@@ -9,6 +9,11 @@ import 'package:news_app/pages/noticias/newsListing.dart';
 import 'package:news_app/services/repository.dart';
 import 'package:news_app/widgets/categoryBox.dart';
 
+import 'package:news_app/services/repository.dart';
+import 'package:flutter/foundation.dart';
+//pages import
+import 'package:news_app/pages/login.dart';
+
 class HomePage extends StatefulWidget {
   final NewsRepository repository;
 
@@ -54,12 +59,13 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return BlocProvider(
       builder: (BuildContext context) => _newsListingBloc,
       child: Scaffold(
         backgroundColor: Colors.indigo,
         appBar: new AppBar(
-          elevation: 0.0,
+          elevation: defaultTargetPlatform == TargetPlatform.android ? 5.0 : 0.0,
           backgroundColor: Colors.transparent,
           title: new Text("Noticias Konrad"),
           bottom: PreferredSize(
@@ -79,19 +85,21 @@ class _HomePageState extends State<HomePage> {
             child: new ListView(
               children: <Widget>[
                 new UserAccountsDrawerHeader(
-                  accountName: new Text("Claire Salazar"),
-                  accountEmail: new Text("carlosdrm@gmail.com"),
-                  currentAccountPicture: new CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: new Text("User"),
-                  ),
-                  otherAccountsPictures: <Widget>[
-                    new CircleAvatar(
-                      backgroundColor: Colors.white,
-                      child: new Icon(Icons.supervisor_account),
-                    )
-                  ],
-                ),
+              accountName: new Text("Usuario"),
+              accountEmail: new Text("Usuario@gmail.com"),
+              currentAccountPicture: new CircleAvatar(
+                backgroundColor: Colors.grey,
+                child: new Icon(Icons.account_circle),
+              ), 
+            ),
+            new ListTile(
+              title: new Text("Iniciar Sesión"),
+              trailing: new Icon(Icons.verified_user),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()),
+                );
+              }
+            ),
                 new ListTile(
               title: new Text("Foro"),
               trailing: new Icon(Icons.new_releases),
