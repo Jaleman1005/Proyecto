@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:news_app/bloc/news_listing_bloc.dart';
 import 'package:news_app/bloc/news_listing_event.dart';
+import 'package:news_app/pages/ChatBot/chat.dart';
 import 'package:news_app/pages/Foro/foro.dart';
 import 'package:news_app/pages/libros/libros.dart';
 import 'package:news_app/pages/noticias/newsListing.dart';
@@ -116,6 +117,15 @@ class _HomePageState extends State<HomePage> {
                   Navigator.of(context).push(new MaterialPageRoute(
                     builder:(BuildContext context)=>
                             new LibrosPage()));
+              },
+            ),
+                new ListTile(
+              title: new Text("ChatBot"),
+              trailing: new Icon(Icons.new_releases),
+              onTap: (){
+                  Navigator.of(context).push(new MaterialPageRoute(
+                    builder:(BuildContext context)=>
+                            new ChatBot()));
               },
             ),
             new ListTile(
