@@ -1,33 +1,36 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_dialogflow/dialogflow_v2.dart';
+import 'package:flutter_dialogflow/flutter_dialogflow.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 
 void main() => runApp(new ChatBot());
 
 class ChatBot extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'News-k',
+      title: 'Alf Chatbot',
       theme: new ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.indigo,
       ),
+      home: new MyHomePage(title: 'Alf Chatbot'),
       debugShowCheckedModeBanner: false,
-      home: new HomePageDialogflow(),
     );
   }
 }
 
-class HomePageDialogflow extends StatefulWidget {
-  HomePageDialogflow({Key key, this.title}) : super(key: key);
-
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _HomePageDialogflow createState() => new _HomePageDialogflow();
+  _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _HomePageDialogflow extends State<HomePageDialogflow> {
+/* https://github.com/VictorRancesCode/flutter_dialogflow/blob/master/example/lib/main.dart */
+
+class _MyHomePageState extends State<MyHomePage> {
+
   final List<ChatMessage> _messages = <ChatMessage>[];
   final TextEditingController _textController = new TextEditingController();
 
@@ -43,7 +46,7 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
                 controller: _textController,
                 onSubmitted: _handleSubmitted,
                 decoration:
-                    new InputDecoration.collapsed(hintText: "Envia un mensaje"),
+                new InputDecoration.collapsed(hintText: "Send a message"),
               ),
             ),
             new Container(
@@ -60,18 +63,14 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
 
   void Response(query) async {
     _textController.clear();
-    AuthGoogle authGoogle =
-        await AuthGoogle(fileJson: "assets/newsk-4e3435430fd4.json")
-            .build();
-    Dialogflow dialogflow =
-        Dialogflow(authGoogle: authGoogle, language: Language.english);
-    AIResponse response = await dialogflow.detectIntent(query);
+    Dialogflow dialogflow =Dialogflow(token: "51d36b47e96e48db84d1364e1f9563f9");
+    AIResponse response = await dialogflow.sendQuery(query);
     ChatMessage message = new ChatMessage(
-      text: response.getMessage() ??
-          new CardDialogflow(response.getListMessage()[0]).title,
-      name: "Bot",
+      text: response.getMessageResponse(),
+      name: "Alf the Bot",
       type: false,
     );
+    FlutterTts().speak(response.getMessageResponse());
     setState(() {
       _messages.insert(0, message);
     });
@@ -81,7 +80,7 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
     _textController.clear();
     ChatMessage message = new ChatMessage(
       text: text,
-      name: "Promise",
+      name: "Me",
       type: true,
     );
     setState(() {
@@ -94,17 +93,16 @@ class _HomePageDialogflow extends State<HomePageDialogflow> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        centerTitle: true,
-        title: new Text("News-K"),
+        title: new Text(widget.title),
       ),
       body: new Column(children: <Widget>[
         new Flexible(
             child: new ListView.builder(
-          padding: new EdgeInsets.all(8.0),
-          reverse: true,
-          itemBuilder: (_, int index) => _messages[index],
-          itemCount: _messages.length,
-        )),
+              padding: new EdgeInsets.all(8.0),
+              reverse: true,
+              itemBuilder: (_, int index) => _messages[index],
+              itemCount: _messages.length,
+            )),
         new Divider(height: 1.0),
         new Container(
           decoration: new BoxDecoration(color: Theme.of(context).cardColor),
@@ -126,14 +124,13 @@ class ChatMessage extends StatelessWidget {
     return <Widget>[
       new Container(
         margin: const EdgeInsets.only(right: 16.0),
-        child: new CircleAvatar(child: new Text('B')),
+        child: new CircleAvatar(child: new Image.asset("img/placeholder.png")),
       ),
       new Expanded(
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Text(this.name,
-                style: new TextStyle(fontWeight: FontWeight.bold)),
+            new Text(this.name, style:new TextStyle(fontWeight:FontWeight.bold )),
             new Container(
               margin: const EdgeInsets.only(top: 5.0),
               child: new Text(text),
@@ -160,11 +157,7 @@ class ChatMessage extends StatelessWidget {
       ),
       new Container(
         margin: const EdgeInsets.only(left: 16.0),
-        child: new CircleAvatar(
-            child: new Text(
-          this.name[0],
-          style: new TextStyle(fontWeight: FontWeight.bold),
-        )),
+        child: new CircleAvatar(child: new Text(this.name[0])),
       ),
     ];
   }
@@ -180,4 +173,3 @@ class ChatMessage extends StatelessWidget {
     );
   }
 } 
-

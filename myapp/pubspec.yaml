@@ -30,6 +30,7 @@ dependencies:
   cached_network_image:
   url_launcher:
   flutter_dialogflow: ^0.1.3
+  flutter_tts: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -39,4 +40,5 @@ flutter:
 
   uses-material-design: true
   assets:
-    - assets/newsk-4e3435430fd4.json
+    - assets/newsk.json
+    - assets/news.json
